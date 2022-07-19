@@ -12,11 +12,10 @@
     "typescript": "^4.3.5"
   },
   "bin": {
-    "downrp": "./dist/index.js",
-    "downrp-save": "./dist/save.js"
+    "wkt": "./dist/index.js"
   },
-  "name": "downrp-cli",
-  "version": "1.0.1",
+  "name": "wk-cli",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.1",
@@ -38,14 +37,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IchliebedichZhu/temp-cli"
+    "url": "https://github.com/KKandLL-Forever/wk-cli.git"
   },
   "keywords": [
-    "get template",
     "cli",
-    "javascript"
+    "wk-cli",
+    "typescript"
   ],
-  "author": "Jeremy Yu",
+  "author": "KKandLL-Forever",
   "license": "MIT",
-  "description": "a create project cli tools"
+  "description": "my cli tools"
 }
