@@ -7,13 +7,13 @@ create my project template tools
 npm
 
 ```shell
-npm install wk-cli -g
+npm install wk-cli-self -g
 ```
 
 yarn
 
 ```shell
-yarn global add wk-cli
+yarn global add wk-cli-self
 ```
 
 ## use

@@ -5,11 +5,11 @@ import {createCommand} from './command';
 import { copySync } from 'fs-extra'
 
 const path = require('path')
-const reactSrc = path.resolve(__dirname,'template/react-17')
-const vueSrc = path.resolve(__dirname,'template/vue3')
+const reactSrc = path.join(__dirname,'template/react-17')
+const vueSrc = path.join(__dirname,'../src/template/vue3')
 const destination = process.cwd()
+// console.log(vueSrc)
 // console.log(destination,'des')
-// console.log(path.resolve(__dirname,'template/react-17'),'path')
 
 /**
  * @description 向项目根目录写入template中的文件
@@ -26,7 +26,7 @@ function entry() {
   inquirer.prompt<IPromptOption>(PROMPT_LIST).then(async (answer) => {
     const {templateName} = answer;
     let params = answer;
-    // console.log(params)
+    console.log(params)
     switch (templateName) {
       case 'react@17':
         await write(reactSrc, destination)
