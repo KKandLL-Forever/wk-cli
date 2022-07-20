@@ -5,7 +5,7 @@ import {createCommand} from './command';
 import { copySync } from 'fs-extra'
 
 const path = require('path')
-const reactSrc = path.join(__dirname,'template/react-17')
+const reactSrc = path.join(__dirname,'../src/template/react-17')
 const vueSrc = path.join(__dirname,'../src/template/vue3')
 const destination = process.cwd()
 // console.log(vueSrc)

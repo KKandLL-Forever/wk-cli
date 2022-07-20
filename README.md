@@ -19,5 +19,6 @@ yarn global add wk-cli-self
 ## use
 
 ```shell
+mkdir newProject && cd newProject
 wkt
 ```
