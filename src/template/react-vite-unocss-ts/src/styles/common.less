@@ -1,0 +1,356 @@
+@import './variables.less';
+
+//可复用flex
+.flexCenter(@justify: center, @align:center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+//可复用grid
+.basicGrid(@columns: repeat(3,30%), @gap: 5%) {
+  display: grid;
+  grid-template-columns: @columns;
+  grid-gap: @gap @gap;
+  place-content: center center;
+  place-items: center center;
+}
+
+.basicCircle(@color: @subColor) {
+  width: 10px;
+  height: 10px;
+  background-color: @color;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.ImgBackground(@url) {
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+//.contentCommon() {
+//  //flex: 1;
+//  overflow: hidden;
+//  display: flex;
+//  flex-direction: column;
+//  height: 100%;
+//  color: #fff;
+//  white-space: nowrap;
+//  &-title {
+//    :global {
+//      .anticon {
+//        margin: 0 10px;
+//      }
+//    }
+//
+//    padding: @PaneContentTitlePadding;
+//    .ImgBackground('@/assets/img/pane-title.png');
+//  }
+//  &-body {
+//    padding: @PaneContentBodyPadding;
+//    //flex: 1;
+//    height: 100%;
+//    display: flex;
+//    flex-direction: column;
+//  }
+//}
+//
+//.scrollStyle {
+//  &::-webkit-scrollbar {
+//    display: none;
+//    /*滚动条整体样式*/
+//    width: 10px;
+//    /*高宽分别对应横竖滚动条的尺寸*/
+//    height: 10px;
+//  }
+//
+//  &::-webkit-scrollbar-thumb {
+//    /*滚动条里面小方块*/
+//    background: #3ead91;
+//    border-radius: 0;
+//  }
+//
+//  &::-webkit-scrollbar-track {
+//    /*滚动条里面轨道*/
+//    background: #1C4AAD;
+//    // border: red 1px solid;
+//  }
+//}
+//
+//.topContent {
+//
+//  .contentCommon();
+//
+//  &-title {
+//    font-size: 16px;
+//  }
+//
+//  &-body {
+//    .ImgBackground('@/assets/img/pane-top-content.png')
+//  }
+//
+//  .single-body {
+//    .ImgBackground('@/assets/img/pane-top-content.png')
+//  }
+//}
+//
+//.bottomContent {
+//  .contentCommon();
+//
+//  &-title {
+//    font-size: 16px;
+//  }
+//
+//  &-body {
+//    .ImgBackground('@/assets/img/pane-bottom-content.png')
+//  }
+//}
+//
+//:global {
+//  .ant-menu {
+//    background: none;
+//    // 总体文字色号设置
+//    color: @Blue;
+//  }
+//
+//  .ant-menu-inline {
+//    border: none;
+//
+//    .ant-menu-item {
+//      &:after {
+//        border-right: 1px solid @subColor;
+//      }
+//    }
+//
+//    //> .ant-menu-submenu {
+//    //  > .ant-menu-submenu-title {
+//    //    height: 25px;
+//    //    line-height:25px;
+//    //  }
+//    //}
+//  }
+//
+//  .ant-menu-light {
+//    .ant-menu-sub.ant-menu-inline {
+//      background: #00284f;
+//    }
+//
+//    .ant-menu-submenu {
+//      &-title {
+//        &:hover {
+//          color: @subColor;
+//        }
+//      }
+//
+//      &-open {
+//        background: #00284f;
+//      }
+//
+//      &-active {
+//        color: @subColor;
+//
+//        .ant-menu-submenu-arrow {
+//          //color: red;
+//        }
+//      }
+//
+//      // 点击选中时样式
+//      &-selected {
+//        color: @subColor;
+//
+//        &:hover {
+//          color: @subColor;
+//        }
+//      }
+//    }
+//
+//    .ant-menu-item {
+//      // 点击选中时样式
+//      &-active {
+//        color: @subColor;
+//      }
+//
+//      &-selected {
+//        background: #00284f;
+//        color: @subColor;
+//
+//        &:hover {
+//          color: @subColor;
+//        }
+//      }
+//
+//      &:hover {
+//        color: @subColor;
+//      }
+//    }
+//  }
+//
+//  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+//    background: #00284f;
+//  }
+//
+//  .ant-menu-submenu-arrow {
+//    color: @Blue;
+//  }
+//
+//  .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+//    height: 25px;
+//    line-height: 25px;
+//  }
+//
+//  .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+//    height: 25px;
+//    line-height: 25px;
+//  }
+//}
+//
+//:global {
+//  .ant-tabs {
+//    color: #fff;
+//  }
+//
+//  .ant-tabs-nav-wrap {
+//    background: #00284f;
+//  }
+//
+//  .ant-tabs-tab {
+//    color: @Blue;
+//
+//    &-btn {
+//      color: @Blue;
+//
+//      &:hover {
+//        color: @subColor;
+//      }
+//    }
+//
+//    &-active {
+//      color: #F9DF4B;
+//    }
+//  }
+//
+//  .ant-tabs-ink-bar {
+//    background: @subColor;
+//  }
+//
+//  .ant-tabs-tab.ant-tabs-tab-active {
+//    .ant-tabs-tab-btn {
+//      color: @subColor;
+//      //&:hover {
+//      //  color: #F9DF4B;
+//      //}
+//    }
+//  }
+//}
+//
+//:global {
+//  .ant-empty-normal {
+//    color: @subColor;
+//  }
+//}
+//:global {
+//  .ant-select-dropdown {
+//    background: #00284f;
+//    //.ImgBackground('/assets/img/pane-bottom-content.png')
+//  }
+//  .ant-select-item {
+//    color: white;
+//  }
+//  .ant-select-item.ant-select-item-group {
+//    color: rgba(255,255,255,0.7);
+//  }
+//  .ant-select-item-option-active:not(.ant-select-item-option-disabled){
+//    background-color: rgba(255,255,255,0.2);
+//  }
+//}
+//
+//
+//// 动画start
+//.animatedDiv {
+//  width: 25%;
+//  display: flex;
+//  flex-direction: column;
+//}
+//
+//.withAnimationLeftIn {
+//  animation: .7s ease-out forwards slideInLeft;
+//  .animatedDiv();
+//  flex-direction: row;
+//}
+//
+//.withAnimationRightIn {
+//  animation: .7s ease-out forwards slideInRight;
+//  .animatedDiv();
+//  overflow: hidden;
+//  //flex-direction: row;
+//  //margin: @mapMargin 0 @mapMargin 0;
+//}
+//
+//.withAnimationLeftOut {
+//  animation: .7s ease-out forwards slideOutLeft;
+//  .animatedDiv();
+//  //width: 0;
+//}
+//
+//.withAnimationRightOut {
+//  animation: .7s ease-out forwards slideOutRight;
+//  .animatedDiv();
+//  //margin: @mapMargin 0 @mapMargin 0;
+//}
+//
+//@keyframes slideOutLeft {
+//  from {
+//    transform: translateX(0%);
+//    opacity: 1;
+//    display: flex;
+//  }
+//  to {
+//    transform: translateX(-100%);
+//    opacity: 0;
+//    display: none;
+//  }
+//}
+//
+//@keyframes slideInLeft {
+//  from {
+//    transform: translateX(-100%);
+//    opacity: 0;
+//    display: none;
+//  }
+//  to {
+//    transform: translateX(0%);
+//    opacity: 1;
+//    display: flex;
+//  }
+//}
+//
+//@keyframes slideOutRight {
+//  from {
+//    transform: translateX(0%);
+//    opacity: 1;
+//    display: flex;
+//  }
+//  to {
+//    transform: translateX(100%);
+//    opacity: 0;
+//    display: none;
+//  }
+//}
+//
+//@keyframes slideInRight {
+//  from {
+//    transform: translateX(100%);
+//    opacity: 0;
+//    display: none;
+//  }
+//  to {
+//    transform: translateX(0%);
+//    opacity: 1;
+//    display: flex;
+//  }
+//}
+
+// 动画End

@@ -7,6 +7,7 @@ import { copySync } from 'fs-extra'
 const path = require('path')
 const reactSrc = path.join(__dirname,'../src/template/react-17')
 const vueSrc = path.join(__dirname,'../src/template/vue3')
+const reactViteSrc = path.join(__dirname,'../src/template/react-vite-unocss-ts')
 const destination = process.cwd()
 // console.log(vueSrc)
 // console.log(destination,'des')
@@ -33,6 +34,9 @@ function entry() {
         break;
       case 'vue3+pinia+router':
         await write(vueSrc, destination)
+        break;
+      case 'react17+vite+unocss+ts':
+        await write(reactViteSrc, destination)
         break;
       case 'custom':
         const customParam = await inquirer.prompt(CUSTOM_TEMPLATE);
