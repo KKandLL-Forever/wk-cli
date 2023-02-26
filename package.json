@@ -15,7 +15,7 @@
     "wkt": "./dist/index.js"
   },
   "name": "wk-cli-self",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "./dist/index.js",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.1",

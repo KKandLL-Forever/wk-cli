@@ -33,12 +33,12 @@ export interface IPromptOption {
  * 拉取项目选项
  */
 export const PROMPT_LIST: QuestionCollection = [
-  {
-    type: 'input',
-    message: 'enter your projectName',
-    name: 'projectName',
-    default: 'test',
-  },
+  // {
+  //   type: 'input',
+  //   message: 'enter your projectName',
+  //   name: 'projectName',
+  //   default: 'test',
+  // },
   {
     type: 'list',
     message: 'choose download template',
