@@ -8,6 +8,7 @@ const path = require('path')
 const reactSrc = path.join(__dirname,'../src/template/react-17')
 const vueSrc = path.join(__dirname,'../src/template/vue3')
 const reactViteSrc = path.join(__dirname,'../src/template/react-vite-unocss-ts')
+const nextUnoSrc = path.join(__dirname,'../src/template/next13-unocss-ts')
 const destination = process.cwd()
 // console.log(vueSrc)
 // console.log(destination,'des')
@@ -37,6 +38,9 @@ function entry() {
         break;
       case 'react17+vite+unocss+ts':
         await write(reactViteSrc, destination)
+        break;
+      case 'next13+unocss+ts':
+        await write(nextUnoSrc, destination)
         break;
       case 'custom':
         const customParam = await inquirer.prompt(CUSTOM_TEMPLATE);
